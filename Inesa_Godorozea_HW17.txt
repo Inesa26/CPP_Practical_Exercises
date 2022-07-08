@@ -1,0 +1,52 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    
+    using namespace std;
+
+    int main() 
+ {   
+   srand( time(0) );
+
+  int v[10];
+  int X[10];
+  int n =rand()%5+5;
+  int x;
+  
+  cout<<"Numarul elementelor din vector = "<<n<<endl;
+  
+  A:
+  cout<<"Introduceti numarul valorilor maximale (pana la 5): ";
+  cin>>x;
+  if(x>5){cout<<"Introduceti o valoare mai mica de 5"<<endl;
+  goto A;
+  }
+  
+  for( int i=0; i<n; i++)
+      {
+         v[i]=rand()%10;
+  }
+   for( int i=0; i<n; i++)
+      {
+         cout<<" v["<<i<<"]="<<v[i]<<endl;
+  } 
+ for (int j=0; j<n-1; j++) {
+ 
+  for (int i=0, temp; i<n-1; i++){
+  if (v[i]<v[i+1]){
+   temp = v[i];
+   v[i]=v[i+1];
+   v[i+1]=temp;
+   }}} 
+for (int i=0; i<x; i++){
+	X[i]=v[i];
+}
+cout<<"\n"<<x<<" valori maxime sunt: "; 
+for (int i=0; i<x; i++){
+		 cout<<setw(3)<<X[i];}
+
+  return 0;  
+ }

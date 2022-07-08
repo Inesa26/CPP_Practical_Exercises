@@ -1,0 +1,101 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+   int insertINT(char *mess) 
+      {
+       int *x = new int;
+        cout<<mess;
+        cin>>*x;
+        return *x;
+   }    
+   
+    int* minmaxV(int *v, int *n, bool x)
+  {  
+  int *max = new int;
+  int *min = new int;
+  
+     *max=*v;
+	 *min=*v;
+  for(int i=1; i < *n ;  i ++  ){
+  if ( *max < *(v+i)) *max=*(v+i);
+  if ( *min > *(v+i)) *min=*(v+i);
+  }
+  return x==0?max:min;
+   } 
+   
+   
+  void show(char *mess, int *a )
+  {
+     cout<<mess<<*a<<" adr = "<<a<<endl; 
+  }
+  
+  void insertV(int *v, int*n){
+  	for (int i=0; i<*n; i++)
+  	*(v+i)=rand()%10;
+  }
+  
+  void insertM ( int **M, int *n, int *m )
+   {
+     for(int i=0; i < *n; i++)
+      for(int j=0; j < *m; j++)
+        *(*(M+i)+j) = rand()%10;
+   }
+   
+   void showM( int **M, int *n, int *m )
+   {
+      for(int i=0; i < *n; i++)
+      {
+       for(int j=0; j < *m; j++)
+         cout<<setw(3)<<*(*(M+i)+j);
+         cout<<endl;}}
+   
+  void showV(int *v, int*n){
+  	for (int i=0; i<*n; i++)
+  	cout<<setw(3)<<*(v+i);
+  }
+  
+  int* sumaV(int *v, int *n)
+  {  
+      int *s = new int ;
+      *s =0;
+  for(int i=0; i < *n; i++  ) 
+  *s+=*(v+i);
+  return s;
+   } 
+  
+  int main(){
+   srand(time(0));
+    int *n = new int;
+	*n=insertINT("Enter n=");
+    int *v = new int [*n];
+    
+    insertV(v,n);
+    showV(v,n);
+    cout<<endl;
+    show("Suma = ", sumaV(v,n));
+    
+    int *max = new int;
+    int *min = new int;
+    max = minmaxV(v,n,0);
+    show( "Max  =" , max ); 	
+  	min = minmaxV(v,n,1);
+    show( "Min  =" , min );
+    
+   
+    *n=insertINT("Enter n=");
+    int *m = new int;
+    *m=insertINT("Enter m=");
+    int **M = new int*[*n];  
+    for(int i = 0; i < *n; i++)
+    *(M+i) = new int[*m];
+      
+      insertM( M , n , m );
+        showM( M , n , m ); 
+    
+    return 0;   
+    }

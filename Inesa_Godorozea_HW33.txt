@@ -1,0 +1,72 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+   
+  int insertINT(char mess[256])
+  {
+   cout<<mess;
+   int x;  
+   cin>>x;
+   return x; 
+  }
+  
+  int insertINTrand(int X)
+  {
+    return rand()%X; 
+}
+ 
+  int diag(int M[][100], int n, int m, bool x, int i)
+  { 
+   if (i<n ){
+  
+         if(!x) cout<<setw(3)<<M[i][i]; 
+       else if(x)  cout<<setw(3)<< M[n-1-i][i]; 
+	   diag(M,n,m,x,++i);
+ }}
+  
+    void insertMa( int M[][100], int n, int m, int i, int j )
+   {
+     	if (i <n){
+     		while (j<m){
+     			M[i][j] = insertINTrand(10);
+     			j++;		
+			 }
+			 insertMa(M,n,m,++i,0);
+   } 
+   }
+  
+   void showMa( int X[][100], int n, int m,  int i, int j )
+   {
+      if (i <n){
+     		while (j<m){
+     	 	
+         cout<<setw(3)<<X[i][j];
+         
+         j++;	
+ }      cout<<endl; 
+        showMa(X,n,m,++i,0);
+        
+		 }  
+   }
+   
+
+   int main(){
+   srand(time(0));
+      
+	 int M[100][100], n = insertINT("Enter n="), m = insertINT("Enter m=");
+      insertMa( M , n , m, 0, 0 );
+        showMa( M , n , m, 0, 0 );  
+	cout<<endl;
+    
+    int dp = diag(M,n,m,0,0);
+    
+	cout<<endl;
+	int ds = diag(M,n,m,1,0);
+	     	
+    	return 0;
+	}

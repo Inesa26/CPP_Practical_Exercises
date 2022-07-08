@@ -1,0 +1,81 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    using namespace std;
+ 
+    int main() 
+ {   
+   srand( time(0) );
+   ///    n [] nr. elme. random  
+  int TAB[500][1000],n;
+  cout<<" Enter nr. vectori =";
+  cin>>n;
+   for(int i=0; i < n; i++ )
+   {
+     
+     TAB[i][0] = rand()%10+10;
+     
+     for(int j=1; j <= TAB[i][0] ; j++)
+     {
+     
+         TAB[i][j] = rand()%10+10; 
+     }
+   }
+   cout<<endl;
+  for(int i=0; i < n; i++ )
+   {
+     cout<<"  V"<<i+1<<"["<<TAB[i][0]<<"] :: ";
+      for(int j=1; j <= TAB[i][0] ; j++)
+     {
+        cout<<setw(3)<<TAB[i][j];
+     }
+      cout<<endl;
+   }
+ 
+   
+ int X,Y;
+  do{
+ 
+  cout<<"Enter X: "<<endl;
+  cin>>X;
+   }while (X>n||X<0);
+   do{
+  
+  cout<<"Enter Y: "<<endl;
+  cin>>Y;
+   }while (Y>n||Y<0||Y==X);
+
+
+ 	if(TAB[X-1][0]<=TAB[Y-1][0]){
+	 
+  for(int j=0,temp; j <= TAB[X-1][0]; j++)
+{   
+   temp=TAB[X-1][j];
+	TAB[X-1][j]=TAB[Y-1][j];
+	TAB[Y-1][j]=temp;
+
+} }
+else{for(int j=0,temp; j <= TAB[Y-1][0]; j++)
+{   
+   temp=TAB[Y-1][j];
+	TAB[Y-1][j]=TAB[X-1][j];
+	TAB[X-1][j]=temp;
+
+}
+}
+   cout<<endl;
+    for(int i=0; i < n; i++ )
+   {
+     cout<<"  V"<<i+1<<"["<<TAB[i][0]<<"] :: ";
+      for(int j=1; j <= TAB[i][0] ; j++)
+     {
+        cout<<setw(3)<<TAB[i][j];
+     }
+      cout<<endl;
+   }
+
+  return 0;  
+ }

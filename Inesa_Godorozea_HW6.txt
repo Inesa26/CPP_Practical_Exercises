@@ -1,0 +1,53 @@
+#include <iostream>   
+    #include <cstdlib>  
+    #include <ctime>    
+#include <iostream>   
+#include <cstdlib>  
+#include <ctime>    
+using namespace std;
+int main() 
+ { 
+	srand( time(0) ); 
+	int a,b,c,x,y,R;
+	a = rand()%70;
+	b = rand()%80;
+	c = rand()%50;
+	x = rand()%20;
+	y = rand()%20;
+    
+	cout<< "  a="<<a<<" b="<<b<<" c="<<c<<" x="<<x<<" y="<<y <<endl;
+      
+	if((a%2==0 && a>=10 && a<20)||( a%2!=0 && a>=20 && a<50 )) a = rand()%10-10;
+		else a = rand()%10;
+    if ((b%2!=0 && b>=5 && b<15)||(b>=15 && b<55)) b = rand()%20-20;
+		else b = rand()%20;
+	if(x<=y){
+		if (c%2==0 && c>=x && c<=y) c = rand()%30-30;
+			else c = rand()%30;}
+	else{ 
+		if (c%2==0 && c>=y && c<=x) c = rand()%30-30;
+       		else c = rand()%30;}
+    R=a+b-c;	
+	cout<< "  a="<<a<<" b="<<b<<" c="<<c<< " a+b-c="<<R<<endl;
+	  
+	if(x<=y){
+	  	if (R%2==0 && R>=x && R<=y){ 
+		  a = rand()%50;
+		  b = rand()%50;
+		  c = rand()%50;
+		  R = a+b-c; }
+		  
+       	else R=R;}
+    else{ 
+		if (R%2==0 && R>=y && R<=x){
+       	  a = rand()%50;
+		  b = rand()%50;
+		  c = rand()%50;
+		  R =a+b-c;	 }
+		  
+       	else R=R;}
+       	
+       cout<< "  a="<<a<<" b="<<b<<" c="<<c<< " a+b-c="<<R<<endl;
+   
+  return 0;  
+ }

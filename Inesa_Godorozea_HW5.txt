@@ -1,0 +1,61 @@
+    #include <iostream>
+    #include <cstdlib>   
+    #include <ctime>   
+    using namespace std;
+    int main() 
+ { 
+    srand ( time(0) );
+
+  double a,b,c,R;
+  
+       a = (double)(rand()%1000)/100;
+       b = (double)(rand()%1000)/100;
+       c = (double)(rand()%1000)/100;
+       R = int(a) + b - int(c);
+      cout<<" a="<<a<<" b="<<b<<" c="<<c<<" a+b-c="<<R<<endl;
+      
+           if(R > 10) 
+		   {a=rand()%35-2;
+		    b=rand()%35-2;
+		    c=rand()%35-2;
+		    R= a+b-c;
+		   }  
+           else if(R < 10)
+		   {a=rand()%6+37;
+		    b=rand()%6+37;
+		    c=rand()%6+37;
+		    R= a+b-c;
+			} 
+           else 
+		   {a=rand()%106-27;
+		    b=rand()%106-27;
+		    c=rand()%106-27;
+		    R= a+b-c;
+		   }
+
+    cout<<" a="<<a<<" b="<<b<<" c="<<c<<" a+b-c="<<R<<endl;
+
+    cout<<"1. 15..37 ="<<rand()%22+15<<endl;
+    cout<<"2. 0..42 ="<<rand()%42<<endl;
+    cout<<"3. -7..26 ="<<rand()%33-7<<endl;
+    cout<<"4. -27..-3 ="<<rand()%24-27<<endl;
+    cout<<"5. 5..37 ="<<rand()%32+5<<endl;
+    cout<<"6. -12..32 ="<<rand()%44-12<<endl;
+    cout<<"7. 0..59 ="<<rand()%59<<endl;
+    cout<<"8. -59..1 ="<<rand()%60-59<<endl;
+    cout<<"9. 2..99 ="<<rand()%97+2<<endl;
+    cout<<"10. -13..14 ="<<rand()%27-13<<endl;
+    cout<<"11. 12..49 ="<<rand()%37+12<<endl;
+    cout<<"12. -5..54 ="<<rand()%59-5<<endl;
+    cout<<"13. -3..0 ="<<rand()%3-3<<endl;
+    cout<<"14. 64..100 ="<<rand()%36+64<<endl;
+    cout<<"15. -8..52 ="<<rand()%60-8<<endl;
+    cout<<"16. 9..98 ="<<rand()%90+9<<endl;
+    cout<<"17. -49..-3 ="<<rand()%46-49<<endl;
+    cout<<"18. 14..67 ="<<rand()%53+14<<endl;
+    cout<<"19. 99..999 ="<<rand()%900+99<<endl;
+    cout<<"20. -300..300 ="<<rand()%600+-300<<endl;
+
+  return 0;  
+ }
+   

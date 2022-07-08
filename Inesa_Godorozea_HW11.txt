@@ -1,0 +1,67 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    using namespace std;
+    int main() 
+ { 
+   srand( time(0) );
+
+    long val1,val2,op,val;
+	int Cval=-1;
+	int Cplus=0, Cminus=0, Cinm=0, Cimp=0, Cputere=0;
+
+  X: 
+ 
+     switch( _getch() )
+     {
+        case 48 : cout<<'0'; val=0; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 49 : cout<<'1'; val=1; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 50 : cout<<'2'; val=2; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 51 : cout<<'3'; val=3; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 52 : cout<<'4'; val=4; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 53 : cout<<'5'; val=5; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 54 : cout<<'6'; val=6; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 55 : cout<<'7'; val=7; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 56 : cout<<'8'; val=8; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        case 57 : cout<<'9'; val=9; Cval++;if (Cval==0)val1=val; else val1=val1*10+val; break;
+        
+        
+        case 43 : if (Cval!=-1&&Cplus==0&&Cminus==0&&Cinm==0&&Cimp==0&&Cputere==0){
+		cout<<'+'; op=0; val2 = val1;Cplus++;Cval=-1;} break;
+        
+		case 45 : if (Cval!=-1&&Cminus==0&&Cplus==0&&Cinm==0&&Cimp==0&&Cputere==0){
+		cout<<'-'; op=1; val2 = val1;Cminus++;Cval=-1;} break;
+		
+        case 42 : if (Cval!=-1&&Cinm==0&&Cplus==0&&Cminus==0&&Cimp==0&&Cputere==0){
+		cout<<'*'; op=2; val2 = val1;Cinm++;Cval=-1;} break;
+        
+        case 47 : if (Cval!=-1&&Cimp==0&&Cplus==0&&Cminus==0&&Cinm==0&&Cputere==0){
+		cout<<'/'; op=3; val2 = val1;Cimp++;Cval=-1;} break;
+        
+        case 94 : if (Cval!=-1&&Cputere==0&&Cplus==0&&Cminus==0&&Cinm==0&&Cimp==0){
+		cout<<'^'; op=4; val2 = val1;Cputere++;Cval=-1;} break;
+		
+        case 13 : if ((Cputere!=0||Cplus!=0||Cminus!=0||Cinm!=0||Cimp!=0)&&(Cval!=-1)){cout<<'=';
+         switch(op)
+         {
+          case 0:cout<<val2+val1<<endl;break;
+          case 1:cout<<val2-val1<<endl; break;
+          case 2:cout<<val2*val1<<endl; break;
+          case 3:  
+          if( val1 == 0 && val2 == 0) cout<<" Error :: Impartirea nu poate fi "<<endl;  
+          else if( val1 == 0 ) cout<<" Error :: Impartirea la zero "<<endl;  
+          else cout<<(double)val2/val1<<endl; break;
+          case 4: cout<<pow(val2,val1)<<endl; break;
+          default: cout<<" HACK application "<<endl; 
+ }
+        Cval=-1;Cplus=0;Cminus=0;Cinm=0;Cimp=0;Cputere=0;} break;
+        case 27 : exit(0);
+        
+ }
+   goto X;  
+   
+  return 0;  
+ }

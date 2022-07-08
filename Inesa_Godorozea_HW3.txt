@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstdlib>  
+#include <ctime>    
+#include <cmath>    
+    using namespace std;
+    int main() 
+ { 
+    srand( time(0) );
+    
+ int a = rand()%20+20;
+ int b = rand()%40-30;  
+ int c = rand()%100;
+ int d = rand()%60-10;
+ int e = rand()%30+14;  
+ 
+ cout<<" a="<<a<<" b="<<b<<" c="<<c<<" d="<<d<<" e="<<e<<""<<endl;
+int R1 = pow( a , 2 );
+     cout<<" R1 = "<< R1 <<endl;
+     double R2 = sin(c);
+     cout<<" R2 = "<< R2 <<endl;
+     double R3 = pow((R1-R2),3);
+     cout<<" R3 = "<< R3 <<endl;
+     double R4 = cos(d);
+     cout<<" R4 = "<< R4 <<endl;
+     int R5 = pow((pow(b,2)+pow(c,2)),2);
+     cout<<" R5 = "<< R5 <<endl;
+     double R6 = R3/(R4/R5);
+     cout<<" R6 = "<< R6 <<endl;
+     double R7 = sqrt( abs(R6) );
+     cout<<" R7 = "<< R7 <<endl;
+     double R8 = log(a);
+     cout<<" R8 = "<< R8 <<endl;
+     double R9 = a/sin(d);
+     cout<<" R9 = "<< R9 <<endl;
+     double R10 = pow(R9,3);
+     cout<<" R10 = "<< R10 <<endl;
+     double R11 = R8/sqrt(abs(R10));
+     cout<<" R11 = "<< R11 <<endl;
+     int R12= pow(pow(d,5),3);
+     cout<<" R12 = "<< R12 <<endl;
+     int R13 = R12+pow(a,2);
+     cout<<" R13 = "<< R13 <<endl;
+     double R14 = sqrt(abs(R13));
+     cout<<" R14 = "<< R14 <<endl;
+     double R15 = sqrt(abs(d));
+     cout<<" R15 = "<< R15 <<endl;
+     double R16 = R15/cos(b);
+     cout<<" R16 = "<< R16 <<endl;
+     int R17 =pow(d,3)+pow(a,4);
+     cout<<" R17 = "<< R17 <<endl;
+     double R18 =double(R17)/pow(pow(c,5),3);
+     cout<<" R18 = "<< R18 <<endl;
+     double R19 = R14/(R16+R18);
+     cout<<" R19 = "<< R19 <<endl;
+     double R20 = R7*R11*R19;
+     cout<<" R20 = "<< R20 <<endl;
+return 0;  
+ }
+
+  double R= (sqrt(abs((pow((pow(a,2)-sin(c)),3))/((cos(d)) /(pow((pow(b,2)+pow(c,2)),2))))))*
+  ((log(a))/(sqrt(abs(pow(a/(sin(d)),3))))) * 
+  (sqrt(abs(pow(pow(d,5),3)+pow(a,2))))/(((sqrt(abs(d)))/(cos(b)))+((pow(d,3)+pow(a,4))/(pow(pow(c,5),3))));
+  cout<<" R  = "<< R  <<endl;

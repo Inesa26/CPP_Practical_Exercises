@@ -1,0 +1,104 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+ 
+    int main() 
+ {   
+   srand( time(0) );
+     
+     int v[100], n, X, max, k, poz, pozmax[100];
+     int *pv, *pn, *pX, *pmax, *pk, *ppoz, *ppozmax;
+    
+     pn = &n;
+     pv = v; //  &v[0] 
+     pX=&X;
+     pmax=&max;
+     pk=&k;
+     ppoz=&poz;
+     ppozmax=pozmax;
+      
+     cout<<" Enter n=";
+     cin>>*pn;
+     do
+     {
+	 
+     cout<<"Enter X max: ";
+     cin>>*pX;
+ }
+     while(*pX>*pn||*pX<0);
+     
+     for(int i=0; i< *pn; i++)*(pv+i) = rand()%10;
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl;
+ *pk=0;
+bool q;
+bool *pq;
+pq=&q;
+ while(*pk<*pX)
+ {   *pmax=INT_MIN;
+     for(int i=0; i< *pn; i++)
+ { if(*pmax<*(pv+i)){
+ 	*pq=true;
+ 	for(int j=0; j<*pk; j++)
+ 	{if(*(ppozmax+j)==i){*pq=false;break;
+	 }
+	 }
+	 if(*pq)
+	 {
+	 
+ *pmax=*(pv+i);
+ *ppoz=i;}
+}
+ }
+ 
+ *(ppozmax+k)=*ppoz;
+ 
+ 
+ cout<<*pk<<"max= "<<*pmax<<"poz="<<*ppoz<<endl;
+ *pk+=1;
+}
+
+bool y;
+bool *py;
+py=&y;
+*py=true;
+
+while(*py){
+    *py=false;
+    for(int i=0, temp; i <*pn-1; i++){
+    	if(*(pv+i)<*(pv+i+1)){
+    		temp=*(pv+i);
+    		*(pv+i)=*(pv+i+1);
+    		*(pv+i+1)=temp;
+    		*py=true;
+		}
+	}
+}
+	
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl;
+ *py=true;   
+while(*py){
+    *py=false;
+    for(int i=0, temp; i <*pn-1; i++){
+    	if(*(pv+i)>*(pv+i+1)){
+    		temp=*(pv+i);
+    		*(pv+i)=*(pv+i+1);
+    		*(pv+i+1)=temp;
+    		*py=true;
+		}
+	}
+}
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl; 
+	
+    return 0;
+    }

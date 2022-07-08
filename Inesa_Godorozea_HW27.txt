@@ -1,0 +1,117 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+ //  pointeri
+ // tip_date *nume_pointer;   <= (conform reg. de declarare a var.)  
+ // 1. * - 
+ // 2. & -  
+ // 1 pointeri prin referinta - 
+    int main() 
+ {   
+   srand( time(0) );
+     
+    
+     int *pv, *pn, *pX, *pmax, *pk, *ppoz, *ppozmax;
+     
+     pn = new int;
+     cout<<" Enter n=";
+     cin>>*pn;
+     pv = new int[*pn]; //  &v[0] 
+     pX= new int;
+     pmax=new int;
+     pk=new int;
+     ppoz=new int;
+     ppozmax=new int[*pn];
+      
+     
+     do
+     {
+	 
+     cout<<"Enter X max: ";
+     cin>>*pX;
+ }
+     while(*pX>*pn||*pX<0);
+     
+     for(int i=0; i< *pn; i++)*(pv+i) = rand()%10;
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl;
+ *pk=0;
+bool q;
+bool *pq;
+pq=&q;
+ while(*pk<*pX)
+ {   *pmax=INT_MIN;
+     for(int i=0; i< *pn; i++)
+ { if(*pmax<*(pv+i)){
+ 	*pq=true;
+ 	for(int j=0; j<*pk; j++)
+ 	{if(*(ppozmax+j)==i){*pq=false;break;
+	 }
+	 }
+	 if(*pq)
+	 {
+	 
+ *pmax=*(pv+i);
+ *ppoz=i;}
+}
+ }
+ 
+ *(ppozmax+*pk)=*ppoz;
+ 
+ 
+ cout<<*pk<<"max= "<<*pmax<<"poz="<<*ppoz<<endl;
+ *pk+=1;
+}
+
+     delete pX;
+     delete pmax;
+     delete pk;
+     delete ppoz;
+     delete[] ppozmax;
+
+
+bool *py;
+py=new bool;
+*py=true;
+
+while(*py){
+    *py=false;
+    for(int i=0, temp; i <*pn-1; i++){
+    	if(*(pv+i)<*(pv+i+1)){
+    		temp=*(pv+i);
+    		*(pv+i)=*(pv+i+1);
+    		*(pv+i+1)=temp;
+    		*py=true;
+		}
+	}
+}
+	
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl;
+ *py=true;   
+while(*py){
+    *py=false;
+    for(int i=0, temp; i <*pn-1; i++){
+    	if(*(pv+i)>*(pv+i+1)){
+    		temp=*(pv+i);
+    		*(pv+i)=*(pv+i+1);
+    		*(pv+i+1)=temp;
+    		*py=true;
+		}
+	}
+}
+      cout<<"\n"<<"n="<<*pn<<" V: ";
+     for(int i=0; i< *pn; i++)cout<<setw(3)<< *(pv+i);
+     cout<<endl; 
+	delete py;
+	delete[]pv;
+	delete pn;
+    return 0;
+    }

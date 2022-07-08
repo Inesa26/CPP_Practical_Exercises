@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	string name,surName;
+	int birthYear;
+	int currentYear = 2021;
+	float average;
+	
+	cout << "Type your name: ";
+	cin >> name;
+	cout << "Type your Surname: ";
+	cin >> surName;
+        cout << "Type your Birth Year: ";
+	cin >> birthYear;
+	cout << "Type your grade point average at StepIT: ";
+	cin >> average;
+	
+	cout << "Name/Surname: " << name <<" "<< surName
+	<<"\nBirth year: "<<birthYear<<"\nAge: "<<currentYear-birthYear
+	<<"\nGrade point average at StepIT: "<<average<<endl;
+	return 0;
+}

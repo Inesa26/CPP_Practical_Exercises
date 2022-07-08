@@ -1,0 +1,84 @@
+#include <iostream>   
+#include <cstdlib>  
+#include <ctime>
+#include <iomanip>    
+using namespace std;
+int main() {
+	    srand( time(0) );
+
+int MAXR = -10;
+int MINR = 128;
+int MAXRI= 32;
+int MINRI= 77;
+int MAXa = -1;
+int MAXb = 20;
+int MAXc = -1;
+int a,b,c,R;
+int C=0;
+int SR=0,SRP=0,SRI=0, Sa=0, Sb=0,Sc=0,CA=0,SCA=0,CBP=0,CBI=0,CBEr=0,CRP=0, SRInt=0;
+int n=rand()%40+1;
+
+E:
+C++;
+XA:
+a=rand()%100;
+if (a%2!=0){CA++;SCA+=a;goto XA;}
+if (MAXa<a)MAXa=a;
+
+XB:
+b=rand()%100;
+if (b%2==0||b<20||b>30){
+	if(b%2==0)CBP++;
+	else CBI++;
+	CBEr++;
+goto XB;}
+if (MAXb<b)MAXb=b;
+
+c=rand()%10;
+if (MAXc<c)MAXc=c;
+
+R=a+b-c;
+if (MAXR<R)MAXR=R;
+if (MINR>R)MINR=R;
+
+if (R%2!=0&&R>=33&&R<=77){
+	if (MAXRI<R)MAXRI=R;
+}
+if (R>=-10&&R<=30||(R>=55&&R<=77)){
+	if (MINRI>R)MINRI=R;
+}
+
+SR+=R;
+if((R>=3&&R<=13)||(R>=30&&R<=54)||(R>=67&&R<=99)||(R>=-11&&R<=-1))SRInt+=R;
+
+if(R%2==0){SRP+=R;
+   if (R>=19&&R<=37)CRP++;}
+else SRI+=R;
+
+Sa+=a;
+Sb+=b;
+Sc+=c;
+cout<<setw(3)<<C<<" din"<<setw(3)<<n<<"    a="<<a<<" b="<<b<<" c="<<c<<" a+b-c="<<setw(3)<<R<<endl;
+if(C<n)goto E;
+cout<<"Suma raspunsurilor= "<<SR<<endl;
+cout<<"Suma raspunsurilor pare="<<SRP<<endl;
+cout<<"Suma raspunsurilor impare="<<SRI<<endl;
+cout<<"Suma pentru a="<<Sa<<endl;
+cout<<"Suma pentru b="<<Sb<<endl;
+cout<<"Suma pentru c="<<Sc<<endl;
+cout<<"Variabila a a primit valori impare de ="<<CA<<" ori"<<endl;
+cout<<"Suma valorilor impare primite de a ="<<SCA<<endl;
+cout<<"Variabila b a primit valori pare de ="<<CBP<<" ori"<<endl;
+cout<<"Variabila b a primit valori impare de ="<<CBI<<" ori"<<endl;
+cout<<"Variabila b a primit valori eronate de ="<<CBEr<<" ori"<<endl;
+cout<<"Raspunsul maxim este "<<MAXR<<endl;
+cout<<"Raspunsul minim este "<<MINR<<endl;
+cout<<"Variabila a maxima este "<<MAXa<<endl;
+cout<<"Variabila b maxima este "<<MAXb<<endl;
+cout<<"Variabila c maxima este "<<MAXc<<endl;
+cout<<"Raspunsuri pare din intervalul 19..37 sunt=  "<<CRP<<endl;
+cout<<"Suma raspunsurilor din intervalele 3..13, 30..54, 67..99, -11..-1=  "<<SRInt<<endl;
+cout<<"Raspunsul maxim impar din intervalul 33..77 este =  "<<MAXRI<<endl;
+cout<<"Raspunsul minim din intervalele -10..30 si 55..77 este =  "<<MINRI<<endl;
+ return 0;  
+ }

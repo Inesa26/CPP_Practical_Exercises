@@ -1,0 +1,68 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+
+  
+  int insertINT(char mess[256])
+  {
+   cout<<mess;
+   int x;  
+   cin>>x;
+   return x; 
+  }
+  void show(char mess[256], int x)
+  {
+     cout<<mess<<x<<endl; 
+  }
+  int abc(int a , int b , int c )
+  {
+   return a+b-c;
+  }
+
+  int random (int x, int y)
+  {return rand()%(y-x)+x;
+  }
+  
+  int max (int rmax,int R)
+  {
+   if (rmax<R) rmax=R;
+   return rmax;
+  }
+  
+    int main() 
+ { 
+    srand(time(0));
+ 
+    int n = random(2,10);
+    show(" n = ",n);
+    int SR =0;
+    int rmax=INT_MIN;
+    int x = insertINT("Introduceti inceputul intervalului: ");
+    int y = insertINT("Introduceti sfarsitul intervalului: ");
+    
+	for (int i=0,a,b,c,R; i<n; i++){
+	
+    a = random(x,y);
+    b = random(x,y);
+    c = random(x,y);
+	show(" a = ",a);
+    show(" b = ",b);  
+    show(" c = ",c);
+ 
+    R = abc(a,b,c);
+    show(" R = a+b-c = ",R);
+    
+    SR+=R;
+	rmax = max(rmax,R);
+	}
+    show(" Suma raspunsurilor = ",SR); 
+    show(" Raspunsul maximal este = ",rmax); 
+    return 0;   
+    }
+    
+      

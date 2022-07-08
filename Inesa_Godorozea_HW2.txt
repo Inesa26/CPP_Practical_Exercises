@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d,e;
+
+	cout<<"Enter a=";
+	cin>>a;
+	cout<<"Enter b=";
+	cin>>b;
+	cout<<"Enter c=";
+	cin>>c;
+	cout<<"Enter d=";
+	cin>>d;
+	cout<<"Enter e=";
+	cin>>e;
+
+	int R1 = a*b-d;
+	cout<<"R1="<<R1<<endl;
+	double R2 = double(R1)/e*(a-c);
+	cout<<"R2="<<R2<<endl;
+	int R3 = d*e;
+	cout<<"R3="<<R3<<endl;
+        double R4 = double(R3)/a*b-c;
+        cout<<"R4="<<R4<<endl;
+	double R5 = R2*R4;
+	cout<<"R5="<<R5<<endl;
+	int R6 = c-d+e;
+	cout<<"R6="<<R6<<endl;
+	double R7 = double(R6)/a*(b-e);
+	cout<<"R7="<<R7<<endl;
+	int R8 = a*(c-a)*e;
+	cout<<"R8="<<R8<<endl;
+	double R9 = double (R8)/c*d-e;
+	cout<<"R9="<<R9<<endl;
+	double R10 = R7+R9;
+	cout<<"R10="<<R10<<endl;
+	double R11= R5/R10;
+	cout<<"R11="<<R11<<endl;
+	int R12= c-d+a;
+	cout<<"R12="<<R12<<endl;
+	double R13 = double(R12)/e-b;
+	cout<<"R13="<<R13<<endl;
+	int R14= b*c-e;
+	cout<<"R14="<<R14<<endl;
+        double R15 = double(R14)/a+b-c;
+	cout<<"R15="<<R15<<endl;
+	double R16= R13/R15;
+	cout<<"R16="<<R16<<endl;
+	double R17 = R11+R16;	
+	cout<<"The result is: "<<R17<<endl;
+	return 0;
+}

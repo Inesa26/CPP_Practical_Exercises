@@ -1,0 +1,77 @@
+#include <iomanip>
+#include <iostream> // cout si cin
+#include <cstdlib> // <stdlib.h> rand srand exit
+#include <ctime> // <time.h> time
+#include <conio.h>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+srand( time(0) );
+
+int M[100][100],n,m;
+cout<<" Enter linii n=";
+cin>>n;
+cout<<" Enter coloane m=";
+cin>>m;
+// insert matrix
+for(int i=0; i < n; i++ )
+{
+for(int j=0; j < m; j++)
+{
+
+M[i][j] = rand()%10;
+}}
+
+cout<<endl;
+// show matrix
+for(int i=0; i < n;i++ )
+{
+for(int j=0; j < m; j++)
+{
+
+cout<<setw(3)<<M[i][j];
+}
+cout<<endl;
+}
+
+cout<<endl;
+
+for( int i=0; i < n ;i++ )
+{
+for(int  j=0, temp; j < 1 ; j++)
+{
+   temp = M[i][j];               
+   M[i][j]=M[i][j+m-1];
+   M[i][j+m-1]=temp;
+   
+}
+}
+for(int i=0; i < n;i++ )
+{
+for(int j=0; j < m; j++)
+{
+
+cout<<setw(3)<<M[i][j];
+}
+cout<<endl;
+}
+
+
+cout<<endl;
+int MAX=-1;
+for(int i=0; i < n;i++ )
+{
+
+for(int j=0; j < m; j++)
+{
+if(MAX<M[i][j])MAX=M[i][j];
+}
+cout<<" linia = "<<i+1<<" MAX="<<MAX<<endl;
+MAX=-1;
+}
+
+return 0;
+}

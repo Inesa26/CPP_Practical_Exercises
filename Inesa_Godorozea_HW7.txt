@@ -1,0 +1,47 @@
+#include <iostream>   
+#include <cstdlib>  
+#include <ctime>    
+using namespace std;
+int main() {
+	    srand( time(0) );
+
+  int a,b,c,R;
+  int CONTOR = 0, CA=0, CB=0, CC=0, CRP=0, CRN=0, CAA=0, CBB=0, CCC=0;      
+      int n;
+      cout<<" Enter n=";
+      cin>>n;
+     W: 
+     CONTOR++;
+      
+	   XA:
+       a=rand()%100;
+       if(a%2!=0){ CA++; goto XA;  }
+	   else if(a>=0&&a<=20)CAA++; 
+       
+	   XB:
+       b=rand()%100;
+       if(b%2!=0){ CB++; goto XB;  } 
+       else if(b>=20&&b<=50)CBB++;
+     
+	   XC:
+       c=rand()%100;
+       if(c%2!=0){ CC++; goto XC;  }
+       else if(c>=50&&c<=100)CCC++;
+	 
+	   R=a+b-c;
+     
+       if(R>=0)CRP++;
+	   else CRN++;
+	   
+	   if (R>=-10&&R<=10)n++;
+	   else if (R>=20 && R<=50)n--;
+	   
+	   cout<<"  CONTOR = "<<CONTOR<<"  CA="<<CA<<"  CB="<<CB<<"  CC="<<CC
+	   <<"     a="<<a<<" b="<<b<<" c="<<c<<"  a+b-c="<<R
+	   <<"  CRP="<<CRP<<"  CRN="<<CRN
+	   <<"  CAA="<<CAA<<"  CBB="<<CBB<<"  CCC="<<CCC<<" n="<<n<<endl;
+	   
+       if( CONTOR < n ) goto W;
+    
+  return 0;  
+ }

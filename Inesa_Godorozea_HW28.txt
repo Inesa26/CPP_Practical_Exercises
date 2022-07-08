@@ -1,0 +1,40 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+
+    int main() 
+ {   
+   srand( time(0) );
+     int *linii = new int;
+     int *coloane = new int;
+     cout<<" Enter nr. vectori=";
+     cin>>*linii;
+     
+     int **M = new int*[*linii];  
+     for(int i=0; i< *linii; i++)
+     { 
+	 *coloane=rand()%8+2;
+      M[i] = new int[*coloane];
+	  M[i][0]=*coloane;
+      
+       for(int j=1; j <= *coloane; j++)
+       {
+      M[i][j] =  rand()%10;
+   } 
+ }
+     cout<<endl;
+     for(int i=0; i< *linii; i++)
+     { cout<<" V"<<i+1<<"["<<M[i][0]<<"]: "; 
+       for(int j=1; j <= M[i][0]; j++)
+       {
+      cout<<setw(3)<<M[i][j];
+   } 
+   cout<<endl;
+ }
+    return 0;
+    }

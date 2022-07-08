@@ -1,0 +1,29 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    using namespace std;
+ 
+    int main() 
+ {   
+   srand( time(0) );
+  	int a,b,c;
+  	int n =rand()%5+5;
+  	int *pa,*pb,*pc,*pn;
+  	pa=&a;
+  	pb=&b;
+  	pc=&c;
+  	pn=&n;
+  	
+  	for( int i=0; i<*pn; i++)
+      {
+         *pa=rand()%10;
+		 *pb=rand()%10;
+		 *pc=rand()%10;
+  	
+  	cout<<i+1<<" din "<<*pn<<" a="<<*pa<<" b="<<*pb<<" c="<<*pc<<" R="<<*pa+*pb-*pc<<endl;
+  }
+  return 0;  
+ }

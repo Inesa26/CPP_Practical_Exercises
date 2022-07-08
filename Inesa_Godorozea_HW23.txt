@@ -1,0 +1,167 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    using namespace std;
+ 
+    int main() 
+ {   
+   srand( time(0) );
+   int SET[24][10][10][10];
+   int qn, zn, n, m, x, y;
+   cout<<" Enter nr. cub = ";
+   cin>> qn;
+   cout<<" Enter nr. matrix = ";
+   cin>> zn;
+   cout<<" Enter nr. linii = ";
+   cin>> n;
+   cout<<" Enter nr. coloane = ";
+   cin>> m;
+   
+  do{
+ 
+  cout<<"Enter X: "<<endl;
+  cin>>x;
+   }while (x>qn||x<0);
+   do{
+  
+  cout<<"Enter Y: "<<endl;
+  cin>>y;
+   }while (y>qn||y<=0||y==x);
+   
+   for(int q=0; q<qn; q++)
+   {
+ for(int z=0; z<zn; z++)
+   {
+    for(int i=0; i<n; i++)
+    {
+      for(int j=0; j<m; j++)
+      {
+     SET[q][z][i][j] = rand()%10;
+    } 
+  }
+   } 
+    }
+     for(int q=0; q<qn; q++)
+   {
+     cout<<" CUB ["<<q+1<<"] "<<endl;
+     for(int z=0; z<zn; z++)
+   {
+     cout<<" Matricea ["<<z+1<<"] "<<endl;
+    for(int i=0; i<n; i++)
+    {
+      for(int j=0; j<m; j++)
+      {
+     cout<<setw(3)<<SET[q][z][i][j];
+    }
+    cout<<endl; 
+  }
+  cout<<endl;
+   } 
+}
+
+for(int z=0, temp; z<zn; z++)
+   {
+    for(int i=0; i<n; i++)
+    {
+      for(int j=0; j<m; j++)
+      {
+     temp = SET[x-1][z][i][j];
+        SET[x-1][z][i][j] = SET[y-1][z][i][j];
+        SET[y-1][z][i][j] = temp;
+    }
+  }
+}
+
+ cout<<" CUB ["<<x<<"] "<<endl;
+     for(int z=0; z<zn; z++)
+   {
+     cout<<" Matricea ["<<z+1<<"] "<<endl;
+    for(int i=0; i<n; i++)
+    {
+      for(int j=0; j<m; j++)
+      {
+     cout<<setw(3)<<SET[x-1][z][i][j];
+    }
+    cout<<endl; 
+  }
+  cout<<endl;
+}
+
+ cout<<" CUB ["<<y<<"] "<<endl;
+     for(int z=0; z<zn; z++)
+   {
+     cout<<" Matricea ["<<z+1<<"] "<<endl;
+    for(int i=0; i<n; i++)
+    {
+      for(int j=0; j<m; j++)
+      {
+     cout<<setw(3)<<SET[y-1][z][i][j];
+    }
+    cout<<endl; 
+  }
+  cout<<endl;
+}
+
+ ///////////////////////////////////////////////////////
+
+   for(int q=0; q<qn; q++)
+   {cout<<"Cub "<<q+1;
+   cout<<endl;
+ for(int z=0; z<zn; z++)
+   {cout<<"Matricea "<<z+1;
+   cout<<endl;
+    
+      for(int j=0; j<m; j++)
+      {   
+          cout<<setw(3)<<SET[q][z][0][j]; 
+        }
+        cout<<endl;
+    }
+cout<<endl;
+}
+         cout<<endl;
+      int l, max, k=0, poz;
+      int vpoz[10];
+      bool verificare;
+   cout<<" Enter nr. maximuri = ";
+       cin>> l;
+  
+  for(int q=0; q<qn; q++)
+   {cout<<"Cub "<<q+1;
+   cout<<endl;
+ for(int z=0; z<zn; z++)
+   {cout<<"Matricea "<<z+1;
+   cout<<endl;
+  
+  while( k < l ) 
+  {    
+         max = INT_MIN;
+        for(int j=0; j<m; j++)
+      {
+         if( max < SET[q][z][0][j] )
+ {
+ verificare=true;
+ for(int i=0; i < k; i++)
+ {
+    if( vpoz[i] == j ){ verificare=false; break;  }  
+ }
+    if( verificare )
+    {
+      max = SET[q][z][0][j]; 
+      poz = j; 
+    }
+ } 
+        }
+        cout<<k+1<<" max="<<max<<"  poz = "<<poz<<endl;
+         vpoz[k]=poz;
+      k++;
+     }
+     k=0;
+}
+cout<<endl;
+}
+  return 0;  
+ }

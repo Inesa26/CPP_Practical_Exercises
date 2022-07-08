@@ -1,0 +1,91 @@
+#include <iostream>
+#include <iomanip>
+#include <cstring>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+ srand(time(0));
+
+ int m1[10][10], n, m;
+ float m2[10][10];
+ char m3[10][10];
+ 
+ FILE *fp;
+ fp = fopen("matrix.txt","w+"); 
+  fprintf( stdout , " Enter  n= " );
+   fscanf(  stdin , "%d",&n);
+   fprintf( stdout , " Enter  m= " );
+   fscanf(  stdin , "%d",&m);
+ // cout<<" Enter n =";
+ // cin>>n;
+  fprintf( fp , "%d %d\n",n,m);
+ for(int i=0; i < n; i++)
+     {
+	  for(int j=0; j < m; j++)
+        {
+		m1[i][j] = rand()%10;
+    fprintf( stdout, " %d ",m1[i][j]);
+    
+    fprintf( fp , "%d ",m1[i][j]);
+ }cout<<endl;
+ fprintf( fp , "\n " );}
+ cout<<endl;
+ fprintf( fp , "\n " );
+ 
+ for(int i=0; i < n; i++)
+     {for(int j=0; j < m; j++)
+        {
+		m2[i][j] = rand()%10*1.357;
+    fprintf( stdout, " %f ",m2[i][j]);
+    fprintf( fp , "%f ",m2[i][j]);
+ }cout<<endl;
+ fprintf( fp , "\n " ); }
+ cout<<endl;
+ fprintf( fp , "\n " );
+ 
+ for(int i=0; i < n; i++)
+      {for(int j=0; j < m; j++)
+        {
+		m3[i][j] = 'a' + rand()%26;
+    fprintf( stdout, " %c ",m3[i][j]);
+    fprintf( fp , "%c ",m3[i][j]);
+ }cout<<endl;
+ fprintf( fp , "\n " ); }
+ 
+ fclose(fp);
+ cout<<endl;
+ 
+ fp = fopen("matrix.txt", "r+");
+ fscanf( fp , "%d %d\n",&n,&m);
+ for( int i=0; i< n; i++)
+ {for(int j=0; j < m; j++)
+        {
+   fscanf( fp , "%d", &m1[i][j]);
+   fprintf( stdout, "%d ",m1[i][j]);
+ }cout<<endl;}
+ cout<<endl;
+ 
+ for( int i=0; i< n; i++)
+ {for(int j=0; j < m; j++)
+        {
+   fscanf( fp , "%f", &m2[i][j]);
+   fprintf( stdout, "%f ",m2[i][j]);
+ }cout<<endl;}
+ cout<<endl;
+ 
+ for( int i=0; i< n; i++)
+ {for(int j=0; j < m; j++)
+        {
+   fscanf( fp , "%c", &m3[i][j]);
+   fprintf( stdout, "%c ",m3[i][j]);
+ }cout<<endl;}
+ cout<<endl;
+ 
+ fclose(fp);
+ ///   [][]  int   float   char 
+    // 1. save [][] matrix.txt 
+    //  2. load [][] matrix.txt
+ return 0;
+}

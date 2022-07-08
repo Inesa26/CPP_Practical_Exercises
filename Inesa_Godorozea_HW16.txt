@@ -1,0 +1,40 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    using namespace std;
+
+    int main() 
+ {   
+   srand( time(0) );
+
+  const int n=100;
+  int v[n];
+  int m =rand()%98+2;
+  cout<<"Numarul valorilor = "<<m<<endl;
+  for( int i=0; i<m; i++)
+      {
+         v[i]=rand()%100;
+  }
+   for( int i=0; i<m; i++)
+      {
+         cout<<" v["<<i<<"]="<<v[i]<<endl;
+  }
+  
+  int MAX1 = -1 ;
+  int MAX2 = -1 ;
+  for( int i=0; i<m; i++)
+      {
+      	if(i<m/2){
+         if( MAX1 < v[i]) MAX1 = v[i];
+		 }
+         else {if( MAX2 < v[i]) MAX2 = v[i];
+		 }
+}
+  cout<<" Valoarea maxima din prima jumatate = "<<MAX1<<endl;
+  cout<<" Valoarea maxima din a doua jumatate = "<<MAX2<<endl;
+ 
+  return 0;  
+ }

@@ -1,0 +1,54 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cmath> 
+    
+    using namespace std;
+
+    int main() 
+ {   
+   srand( time(0) );
+
+  int v[10];
+  int n =rand()%5+5;
+  int pozREP[10];
+  int k=0;
+  bool q;
+  
+  for( int i=0; i<n; i++)
+      {
+         v[i]=rand()%10;
+  }
+   for( int i=0; i<n; i++)
+      {
+         cout<<" v["<<i<<"]="<<v[i]<<endl;
+  } 
+  
+  for (int i=0, contor; i<n;i++) {
+                                                         
+           q=true;                                               
+        for (int j=0;j<k;j++) {                        
+           
+		                                                    
+			if(v[i]==pozREP[j]){q=false; break;}              
+	}
+			if(q){
+			contor =0;
+			for(int l=0; l<n;l++){
+			
+            if (v[i]==v[l])
+			contor++;
+            
+        }
+    cout<<"The number "<<v[i]<<" is repeated "<<contor<<" times"<<"\n";
+            pozREP[k]=v[i];
+           k++; 
+	
+}   
+      
+    }
+  
+  return 0;  
+ }

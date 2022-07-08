@@ -1,0 +1,27 @@
+    #include <iostream>
+    #include <cstdlib>   
+    #include <ctime>   
+    using namespace std;
+    int main() 
+ { 
+    srand( time(0) );
+
+   int a,b,c,x,y,n;
+   a = rand()%40;    
+   b = rand()%35-15; 
+   c = rand()%20+10; 
+   x = rand()%15;    
+   y = rand()%35+15; 
+   
+   cout<< " a = "<<a << " b = "<<b << " c = "<<c<<" x = "<<x <<" y = "<<y<<endl;
+   a = rand()%5+10  ? a=1 : a=a; 
+   b >=x ? b=rand()%15 : b= rand()%35+15;
+   c ==0 ? c=1 : a=2;
+   cout<< " a = "<<a << " b = "<<b << " c = "<<c << " R = a+b-c="<<a+b-c<<endl; 
+   bool N;
+   n = rand()%20;
+   cout<< " Valoarea aleatorie din intervalul 0...20 = "<<n<<endl;
+   N =  a+b-c > n ? 1 : 0 ; 
+   cout<<"\n R > "<<n<< ( N ?  " DA " : " NU " ) << endl; 
+  return 0;  
+ }

@@ -1,0 +1,78 @@
+#include <iomanip>
+    #include <iostream>   //  cout si cin 
+    #include <cstdlib>  // <stdlib.h>   rand srand exit
+    #include <ctime>    // <time.h>  time 
+    #include <conio.h> 
+    #include <cstring>  // string.h
+    #include <windows.h>
+    using namespace std;
+    
+     struct student
+ {
+ 
+ char   name[265];
+ int    age;
+ char   group[256];
+ }S[100];
+ 
+    int meniu() 
+ { 
+     system("cls");
+     cout<<"\n\n\t MENIU STUDENT " <<endl;
+     cout<<"\t  1. Enter Student " <<endl;
+     cout<<"\t  2. Show Student " <<endl;
+     
+     cout<<"\tESC. Exit"<<endl ;
+     return _getch() ;
+ }
+   
+   void insertS(int *n){
+
+   system ("cls");
+   do
+   
+   {cout<<"Student ["<<(*n)+1<<"]"<<endl;
+    cout<<"Enter student's name: ";
+    cin>>S[*n].name;
+    
+    cout<<"Enter student's age: ";
+    cin>>S[*n].age;
+    
+    cout<<"Enter student's group: ";
+    cin>>S[*n].group;
+    (*n)++;
+    cout<<"Esc -exit, any key to continue"<<endl;
+   }while(_getch()!=27);
+   }
+   
+   void showS(int n){
+   
+   system ("cls");
+   if (n>0)
+   for(int i=0; i<n; i++)
+   {cout<<"Student ["<<i+1<<"]"<<endl;
+    cout<<"Name: "<<S[i].name<<endl;
+    
+    cout<<"Age: "<<S[i].age<<endl;
+    
+    cout<<"Group: "<<S[i].group<<endl;
+   }else cout<<"There are no students for display"<<endl;
+   }
+   
+   
+   int main() 
+ {   
+    srand(time(0));
+    int n=0;
+ while (1){
+ 
+ switch(meniu())
+ {case 49: insertS(&n);system("pause");break;
+  case 50:    showS(n);system("pause");break;
+  case 27:    exit(0);	
+ 	
+ }
+ 
+}
+return 0;
+}

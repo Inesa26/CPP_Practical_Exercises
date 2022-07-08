@@ -1,0 +1,185 @@
+    #include <iomanip>
+    #include <iostream>   
+    #include <conio.h> 
+    using namespace std;
+    int main() 
+ {
+    int Nrc, Nri = 0;
+
+    cout<<" 1) Ce inseamna Follow the Free?"<<endl;
+    cout<<"\t a) Strategie financiara cu preturi de plecare foarte mare "<<endl;
+    cout<<"\t b) Strategie financiara cu preturi de plecare foarte mici "<<endl;
+    cout<<"\t c) Strategie financiara cu preturi de plecare forfetare "<<endl;
+    cout<<"\t d) Investitiile brute "<<endl;
+    
+    A:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nrc++; cout<<"\t b -  Raspuns corect!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto A;
+    }
+
+    cout<<" 2) Ce inseamna audit?"<<endl;
+    cout<<"\t a) Pierdere "<<endl;
+    cout<<"\t b) Semnalare "<<endl;
+    cout<<"\t c) Revizuire, verificare "<<endl;
+    cout<<"\t d) Emitere "<<endl;
+    
+    B:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nrc++; cout<<"\t c -  Raspuns corect!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto B;
+    }
+
+    cout<<" 3) Ce desemneaza termenul broker?"<<endl;
+    cout<<"\t a) Agent de vanzari "<<endl;
+    cout<<"\t b) Agent intr-o firma de prestigiu "<<endl;
+    cout<<"\t c) Agent la banca "<<endl;
+    cout<<"\t d) Agent la bursa "<<endl;
+    
+    C:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nrc++; cout<<"\t d -  Raspuns corect!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto C;
+    }
+
+    cout<<" 4) Ce desemneaza BtB?"<<endl;
+    cout<<"\t a) Indicele BTX "<<endl;
+    cout<<"\t b) Indicele BET "<<endl;
+    cout<<"\t c) Business-to-Business, afaceri intre intreprinzatori "<<endl;
+    cout<<"\t d) Cota-parte dintr-un fond de actiuni "<<endl;
+    
+    D:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nrc++; cout<<"\t c -  Raspuns corect!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto D;
+    }
+
+    cout<<" 5) Ce sunt salariile nete?"<<endl;
+    cout<<"\t a) Salariile impozitate "<<endl;
+    cout<<"\t b) Salariile neimpozitate "<<endl;
+    cout<<"\t c) Salariile dupa prelevarea taxelor si a asigurarilor sociale "<<endl;
+    cout<<"\t d) Salariile fixe "<<endl;
+    
+    E:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nrc++; cout<<"\t c -  Raspuns corect!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto E;
+    }
+
+    cout<<" 6) Ce este o plata in rate?"<<endl;
+    cout<<"\t a) Plata unei datorii "<<endl;
+    cout<<"\t b) Plata cu dobanda "<<endl;
+    cout<<"\t c) Plata fractionata a unei datorii in bani "<<endl;
+    cout<<"\t d) Salariile fixe "<<endl;
+    
+    F:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nrc++; cout<<"\t c -  Raspuns corect!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto F;
+    }
+
+    cout<<" 7) Ce este capitalul strain?"<<endl;
+    cout<<"\t a) Capital provenit din exteriorul unei tari "<<endl;
+    cout<<"\t b) Capital provenit din interiorul unei tari "<<endl;
+    cout<<"\t c) Capital provenit din exteriorul unei tari "<<endl;
+    cout<<"\t d) Capital provenit de la investitori "<<endl;
+    
+    G:
+    switch( _getch() )
+    {
+        case 'a': Nrc++; cout<<"\t a -  Raspuns corect!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto G;
+    }
+    
+    cout<<" 8) Ce sunt societatile publice?"<<endl;
+    cout<<"\t a) Societatile pe actiuni cu un mare numar de actionari "<<endl;
+    cout<<"\t b) Societatile pe actiuni cu un numar mic de actionari "<<endl;
+    cout<<"\t c) Societatile pe actiuni cu comandita "<<endl;
+    cout<<"\t d) Societatile pe actiuni cu raspundere limitata "<<endl;
+    
+    H:
+    switch( _getch() )
+    {
+        case 'a': Nrc++; cout<<"\t a -  Raspuns corect!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto H;
+    }
+
+    cout<<" 9) Ce a inventat Henry Ford?"<<endl;
+    cout<<"\t a) Procedeu de zbor cu reactie "<<endl;
+    cout<<"\t b) Aparat individual de zbor "<<endl;
+    cout<<"\t c) Masina cu abur cu vid "<<endl;
+    cout<<"\t d) Banda rulanta "<<endl;
+    
+    I:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nri++; cout<<"\t b -  Raspuns gresit!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nrc++; cout<<"\t d -  Raspuns corect!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto I;
+    }
+
+    cout<<" 10) Cum se numeste pretul aproximat al unui titlu de valoare?"<<endl;
+    cout<<"\t a) Plata unei datorii "<<endl;
+    cout<<"\t b) Curs "<<endl;
+    cout<<"\t c) Agent la bursa "<<endl;
+    cout<<"\t d) Bunuri imobile "<<endl;
+    
+    J:
+    switch( _getch() )
+    {
+        case 'a': Nri++; cout<<"\t a -  Raspuns gresit!" <<endl; break;
+        case 'b': Nrc++; cout<<"\t b -  Raspuns corect!" <<endl; break;
+        case 'c': Nri++; cout<<"\t c -  Raspuns gresit!" <<endl; break;
+        case 'd': Nri++; cout<<"\t d -  Raspuns gresit!" <<endl; break;
+        default : cout<<"\t Nu ai raspuns la aceasta intrebare, selecteaza un raspus din variantele propuse."<<endl;
+        goto J;
+    }
+    cout<<"Numarul raspunsurilor corecte = "<<Nrc<<endl;
+    cout<<"Numarul raspunsurilor incorecte = "<<Nri<<endl;
+    if (Nrc==0) Nrc++;
+    cout<<"Nota ta pentru aceasta evaluare este: "<<Nrc<<endl;
+  return 0;  
+ }
+
+
